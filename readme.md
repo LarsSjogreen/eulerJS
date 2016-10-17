@@ -1,7 +1,7 @@
 # Euler in Javascript
 
 ```
-git clone ...
+git clone https://github.com/LarsSjogreen/eulerJS.git
 npm install --global mocha
 mocha
 ```
