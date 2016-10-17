@@ -28,8 +28,12 @@ euler.prototype.euler2 = function(max) {
 		fibLast = fibCurr;
 		fibCurr = fibNext;
 	}
-	
+
 	return sum;
+}
+
+euler.prototype.euler3 = function(number) {
+	return 2;	
 }
 
 module.exports = euler;

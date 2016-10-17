@@ -21,4 +21,13 @@ describe('Euler', function() {
 			assert.equal(4613732, euler.euler2(4000000));
 		});
 	});
+
+	describe('euler3', function() {
+		it('should run euler.euler3(13195) and return 29', function() {
+			assert.equal(29, euler.euler3(13195));
+		});
+		it('should run euler.euler3(600851475143) and return 6857', function() {
+			assert.equal(6857, euler.euler3(600851475143));
+		});
+	});
 });
