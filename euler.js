@@ -36,4 +36,12 @@ euler.prototype.euler3 = function(number) {
 	return 2;	
 }
 
+euler.prototype.euler4 = function(digits) {
+	return 2;	
+}
+
+euler.prototype.euler5 = function(max) {
+	return 2;	
+}
+
 module.exports = euler;

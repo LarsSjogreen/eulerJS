@@ -30,4 +30,22 @@ describe('Euler', function() {
 			assert.equal(6857, euler.euler3(600851475143));
 		});
 	});
+
+	describe('euler4', function() {
+		it('should run euler.euler4(2) and return 9009', function() {
+			assert.equal(9009, euler.euler4(2));
+		});
+		it('should run euler.euler4(3) and return 906609', function() {
+			assert.equal(906609, euler.euler4(3));
+		});
+	});
+
+	describe('euler5', function() {
+		it('should run euler.euler5(10) and return 2520', function() {
+			assert.equal(2520, euler.euler5(10));
+		});
+		it('should run euler.euler5(20) and return 232792560', function() {
+			assert.equal(232792560, euler.euler5(20));
+		});
+	});	
 });
