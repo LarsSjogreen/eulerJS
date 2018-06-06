@@ -44,4 +44,8 @@ euler.prototype.euler5 = function(max) {
 	return 2;	
 }
 
+euler.prototype.euler6 = function(upto) {
+	return 2;
+}
+
 module.exports = euler;
