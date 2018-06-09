@@ -41,7 +41,32 @@ euler.prototype.euler4 = function(digits) {
 }
 
 euler.prototype.euler5 = function(max) {
-	return 2;	
+	var toBeKept = [];
+	var toBeAdded = [];
+
+	var isPrime = function(number) {
+		for (var i=2;i<number;i++) {
+			if (number % i === 0) return false;
+		}
+		return number !== 1;
+	}
+
+	for (var i = max;i>0;i--) {
+		if (isPrime(i)) {
+			toBeKept.push(i);
+		} 
+	}
+
+	toBeKept.forEach(function (num) {
+		powed = 2;
+		while (Math.pow(num, powed) <= max) {
+			toBeAdded.push(num);
+			powed++;
+		}
+	});
+	toBeKept = toBeKept.concat(toBeAdded);
+
+	return toBeKept.reduce(function (a,b) { return a*b; });
 }
 
 euler.prototype.euler6 = function(upto) {
