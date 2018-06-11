@@ -73,4 +73,8 @@ euler.prototype.euler6 = function(upto) {
 	return 2;
 }
 
+euler.prototype.euler7 = function(primenum) {
+	return 2;
+}
+
 module.exports = euler;

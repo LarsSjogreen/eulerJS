@@ -57,4 +57,13 @@ describe('Euler', function() {
 			assert.equal(70, euler.euler6(4));
 		});
 	});
+
+	describe('euler7', function() {
+		it('should run euler.euler7(6) and return 13', function() {
+			assert.equal(13, euler.euler7(6));
+		});
+		it('should run euler.euler7(10001) and return 104743', function() {
+			assert.equal(104743, euler.euler7(10001));
+		});
+	});
 });
