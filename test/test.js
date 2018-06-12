@@ -66,4 +66,10 @@ describe('Euler', function() {
 			assert.equal(104743, euler.euler7(10001));
 		});
 	});
+
+	describe('euler22', function() {
+		it('should consume names.txt, sort and then calculate name score (position * name sum) and sum all', function() {
+			assert.equal(871198282, euler.euler22());
+		})
+	});
 });

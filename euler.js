@@ -77,4 +77,27 @@ euler.prototype.euler7 = function(primenum) {
 	return 2;
 }
 
+/* ---- */
+
+euler.prototype.euler22 = function(name) {
+	var namevalue = function(name) {
+		var namesum = 0;
+		for (var i=0;i<name.length;i++) {
+			namesum += name[i].charCodeAt(0);
+		};
+		return namesum;
+	};
+
+	var fs = require('fs');
+
+	let nameArray = [];
+	nameArray = fs.readFileSync('./resources/p022_names.txt').toString().split("\n");
+	nameArray.sort();
+	let totalSum = 0;
+	for(var i=0;i<nameArray.length;i++) {
+		totalSum += namevalue(nameArray[i]) * (i+1);
+	}
+	return totalSum;
+}
+
 module.exports = euler;
