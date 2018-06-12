@@ -82,8 +82,11 @@ euler.prototype.euler7 = function(primenum) {
 euler.prototype.euler22 = function(name) {
 	var namevalue = function(name) {
 		var namesum = 0;
-		for (var i=0;i<name.length;i++) {
-			namesum += name[i].charCodeAt(0);
+		/* Below you can find an ugly-ass hack. I couldn't be bothered to strip the quote marks from names
+		   during import so instead I just skip them on char value calculation instead. Sacrificing memory
+		   space for speed (and also enabling myself to be lazy, which is a programmer virtue, right?). */
+		for (var i=1;i<name.length-1;i++) {
+			namesum += name[i].charCodeAt(0)-64;
 		};
 		return namesum;
 	};
@@ -91,7 +94,7 @@ euler.prototype.euler22 = function(name) {
 	var fs = require('fs');
 
 	let nameArray = [];
-	nameArray = fs.readFileSync('./resources/p022_names.txt').toString().split("\n");
+	nameArray = fs.readFileSync('./resources/p022_names.txt').toString().split(',');
 	nameArray.sort();
 	let totalSum = 0;
 	for(var i=0;i<nameArray.length;i++) {
