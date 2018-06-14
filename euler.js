@@ -73,8 +73,27 @@ euler.prototype.euler6 = function(upto) {
 	return 2;
 }
 
-euler.prototype.euler7 = function(primenum) {
-	return 2;
+euler.prototype.euler7 = function(primenumlimit) {
+	var isPrimeNaive = function(number) {
+		for (var i=2;i<number;i++) {
+			if (number % i === 0) return false;
+		}
+		return number !== 1;
+	}
+
+	var primecount = 0;
+	var lastprime = 0;
+	for (var i=1;i<1000000;i++) {
+		if (isPrimeNaive(i)) {
+			primecount++;
+			lastprime = i;
+		}
+		if (primecount === primenumlimit) {
+			break;
+		}
+	}
+
+	return lastprime;
 }
 
 euler.prototype.euler8 = function(numberOfDigits) {
