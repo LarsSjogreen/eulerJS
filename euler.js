@@ -81,10 +81,27 @@ euler.prototype.euler7 = function(primenumlimit) {
 		return number !== 1;
 	}
 
+	var isPrimeAKS = function(number) {
+		if (number <= 1) return false;
+		if (number <= 3) return true;
+
+		if (number % 2 === 0 || number % 3 === 0) {
+			return false;
+		}
+
+		for (let i = 5; i * i <= number; i += 6) {
+			if (number % i === 0 || number % (i + 2) === 0) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
 	var primecount = 0;
 	var lastprime = 0;
 	for (var i=1;i<1000000;i++) {
-		if (isPrimeNaive(i)) {
+		if (isPrimeAKS(i)) {
 			primecount++;
 			lastprime = i;
 		}
