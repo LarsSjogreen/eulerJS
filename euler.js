@@ -131,6 +131,10 @@ euler.prototype.euler8 = function(numberOfDigits) {
 	return highest;
 }
 
+euler.prototype.euler9 = function() {
+	return 2;
+}
+
 /* ---- */
 
 euler.prototype.euler22 = function(name) {
