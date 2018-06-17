@@ -77,8 +77,11 @@ describe('Euler', function() {
 	});
 
 	describe('euler9', function() {
-		it('should run euler.euler9() and return 31875000', function() {
-			assert.equal(31875000, euler.euler9(4));
+		it('should run euler.euler9(12) and return 60', function () {
+			assert.equal(60, euler.euler9(12));
+		});
+		it('should run euler.euler9(1000) and return 31875000', function() {
+			assert.equal(31875000, euler.euler9(1000));
 		});
 	});
 

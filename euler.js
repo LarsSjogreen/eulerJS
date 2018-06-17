@@ -131,7 +131,27 @@ euler.prototype.euler8 = function(numberOfDigits) {
 	return highest;
 }
 
-euler.prototype.euler9 = function() {
+euler.prototype.euler9 = function(limiter) {
+	var checkTriplet = function(a,b,c, limit) {
+		if ((a<b)&&(b<c)) {
+			if ((a+b+c) === limit) {
+				if ((a**2+b**2) === c**2) {
+					return true;
+				}	
+			}
+		}
+		return false;
+	}
+
+	for (var i = 1; i<limiter;i++) {
+		for (var j = 2; j<limiter;j++) {
+			for (var k = 3; k<limiter;k++) {
+				if (checkTriplet(i,j,k,limiter)) {
+					return i*j*k;
+				}
+			}
+		}	
+	}
 	return 2;
 }
 
