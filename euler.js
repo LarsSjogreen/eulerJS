@@ -37,7 +37,28 @@ euler.prototype.euler3 = function(number) {
 }
 
 euler.prototype.euler4 = function(digits) {
-	return 2;	
+	var isPalindromic = (number) => number.toString() === number.toString().split('').reverse().join('');
+	var maxnum = parseInt("9".repeat(digits*2));
+	var startnum = parseInt("9".repeat(digits));
+
+	var stopSearching = false;
+
+	for (var i = maxnum; i>0;i--) {
+		for (var j = startnum; j>0;j--) {
+			if ((i%j) === 0){
+				let otherTerm = i/j;
+				if (otherTerm > startnum) {
+					continue;
+				} else {
+					if (isPalindromic(i)) {
+						console.log(i/j + '*' + j + '=' + i);
+						return i;
+					} 
+				}
+			}
+		}
+	}
+	return 2;
 }
 
 euler.prototype.euler5 = function(max) {
