@@ -85,6 +85,21 @@ describe('Euler', function() {
 		});
 	});
 
+	describe('euler10', function() {
+		it('should run euler.euler10(10) and return 17', function() {
+			assert.equal(17, euler.euler10(10));
+		});
+		it('should run euler.euler10(2000000) and return 142913828922', function() {
+			assert.equal(142913828922, euler.euler10(2000000));
+		});
+	});
+
+	describe('euler11', function() {
+		it('should run euler.euler11() and return 70600674', function() {
+			assert.equal(70600674, euler.euler11());
+		});
+	});
+
 	describe('euler22', function() {
 		it('should consume names.txt, sort and then calculate name score (position * name sum) and sum all', function() {
 			assert.equal(871198282, euler.euler22());

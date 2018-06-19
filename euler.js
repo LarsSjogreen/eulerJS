@@ -176,6 +176,14 @@ euler.prototype.euler9 = function(limiter) {
 	return 2;
 }
 
+euler.prototype.euler10 = function(limit) {
+	return 2;
+}
+
+euler.prototype.euler11 = function() {
+	return 2;
+}
+
 /* ---- */
 
 euler.prototype.euler22 = function(name) {
