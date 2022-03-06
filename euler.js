@@ -1,3 +1,4 @@
+const { getPrimes } = require('./helpers.js');
 function euler() { }
 
 euler.prototype.euler1 = function (max, mul1, mul2) {
@@ -31,7 +32,23 @@ euler.prototype.euler2 = function (max) {
 };
 
 euler.prototype.euler3 = function (number) {
-  return 2;
+  const primesToNumber = getPrimes(15000); // This is not good
+  const isDivisibleBy = (num, prime) => { return ((num % prime) === 0) };
+  const factors = [];
+  let primeCounter = 1;
+  let restNumber = number;
+  while (restNumber !== 1) {
+    if (isDivisibleBy(restNumber, primesToNumber[primeCounter])) {
+      restNumber = restNumber / primesToNumber[primeCounter];
+      factors.push(primesToNumber[primeCounter]);
+      if (restNumber === 1) {
+        return [...factors].pop();
+      }
+    } else {
+      primeCounter = primeCounter + 1;
+    }
+  }
+  return [...factors].pop();
 };
 
 euler.prototype.euler4 = function (digits) {
@@ -55,7 +72,6 @@ euler.prototype.euler4 = function (digits) {
           continue;
         } else {
           if (isPalindromic(i)) {
-            console.log(i / j + "*" + j + "=" + i);
             return i;
           }
         }
